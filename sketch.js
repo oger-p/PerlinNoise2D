@@ -15,7 +15,7 @@ function getVertex(x, y, scale) {
   h = slider_height.value();
   noise_vertex = noise((x + noise_x_offset) / 15, (y + noise_y_offset) / 15);
   if (slider_texture.value() == 1) {
-    fill(map_range(noise_vertex, 0, 1, 20, 135));
+    fill(map_range(noise_vertex, 0, 1, 20, 230));
   }
   vertex(x * scale, y * scale, map_range(noise_vertex, 0, 1, -h, h));
 }
@@ -23,13 +23,13 @@ function getVertex(x, y, scale) {
 function setup() {
   createCanvas(1920, 900, WEBGL);
   createSpan("X Speed : ");
-  slider_x_offset = createSlider(0, 1, 0.26, 0.01);
+  slider_x_offset = createSlider(0, 1, 0.25, 0.01);
   createSpan("| Y Speed : ");
   slider_y_offset = createSlider(0, 1, 0.15, 0.01);
   createSpan("| Height : ");
-  slider_height = createSlider(-100, 100, 30, 1);
+  slider_height = createSlider(-100, 100, 25, 1);
   createSpan("| Scale : ");
-  slider_scale = createSlider(2, 10, 3.35, 0.05);
+  slider_scale = createSlider(2, 10, 4.7, 0.05);
   createSpan("| Apply texture : ");
   slider_texture = createSlider(0, 1, 1, 1);
 }
@@ -40,7 +40,7 @@ function draw() {
   let mapY = height / scale;
   background(0);
   if (slider_texture.value() == 0) {
-    stroke(150);
+    stroke(255);
   } else {
     noStroke();
   }
