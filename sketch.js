@@ -1,5 +1,3 @@
-let coordinates = [];
-let map = [];
 let width = 600;
 let height = 500;
 let noise_x_offset = 0;
@@ -25,13 +23,13 @@ function getVertex(x, y, scale) {
 function setup() {
   createCanvas(1920, 900, WEBGL);
   createSpan("X Speed : ");
-  slider_x_offset = createSlider(0, 1, 0.1, 0.01);
+  slider_x_offset = createSlider(0, 1, 0.26, 0.01);
   createSpan("| Y Speed : ");
-  slider_y_offset = createSlider(0, 1, 0.1, 0.01);
+  slider_y_offset = createSlider(0, 1, 0.15, 0.01);
   createSpan("| Height : ");
-  slider_height = createSlider(-100, 100, 25, 1);
+  slider_height = createSlider(-100, 100, 30, 1);
   createSpan("| Scale : ");
-  slider_scale = createSlider(2, 10, 3, 0.05);
+  slider_scale = createSlider(2, 10, 3.35, 0.05);
   createSpan("| Apply texture : ");
   slider_texture = createSlider(0, 1, 1, 1);
 }
@@ -47,8 +45,8 @@ function draw() {
     noStroke();
   }
   translate(1000, 200);
-  rotateX(PI / 3);
-  translate(-1300, -80, 360);
+  rotateX(PI / 3.1);
+  translate(-1300, -110, 360);
   for (x = 0; x < mapX - 1; x++) {
     beginShape(TRIANGLE_STRIP);
     for (y = 0; y < mapY; y++) {
