@@ -15,7 +15,7 @@ function getVertex(x, y, scale) {
   h = slider_height.value();
   noise_vertex = noise((x + noise_x_offset) / 15, (y + noise_y_offset) / 15);
   if (slider_texture.value() == 1) {
-    fill(map_range(noise_vertex, 0, 1, 20, 230));
+    fill(map_range(noise_vertex, 0, 1, 20, 150));
   }
   vertex(x * scale, y * scale, map_range(noise_vertex, 0, 1, -h, h));
 }
@@ -29,7 +29,7 @@ function setup() {
   createSpan("| Height : ");
   slider_height = createSlider(-100, 100, 25, 1);
   createSpan("| Scale : ");
-  slider_scale = createSlider(2, 10, 4.7, 0.05);
+  slider_scale = createSlider(2, 10, 3.7, 0.05);
   createSpan("| Apply texture : ");
   slider_texture = createSlider(0, 1, 1, 1);
 }
@@ -40,6 +40,7 @@ function draw() {
   let mapY = height / scale;
   background(0);
   if (slider_texture.value() == 0) {
+    noFill();
     stroke(255);
   } else {
     noStroke();
